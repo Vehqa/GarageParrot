@@ -1,1 +1,7 @@
-/*# sourceMappingURL=style.css.map */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}/*# sourceMappingURL=style.css.map */
