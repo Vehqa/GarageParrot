@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}V.Parrot Annonces{% endblock %}
+
+
+{% block body %}
+    <h1 class="title">Nos Occasions</h1>
+    <div class="adpage">
+        {% for ad in ads %}
+            <article class="adpage__list">
+                <img class="adpage__img" src="..\..\..\assets\upload\{{ ad.getImage() }}">
+                <h2 class="adpage__title">{{ ad.getTitle() }}</h2>
+                <div class="adpage__info">
+                    <p>Prix : {{ ad.getPrice }} €</p>
+                    <p>Km : {{ ad.getKm() }} </p>
+                </div>
+                <hr class="separation">
+                <div class="adpage__info2">
+                <p>Modèle : {{ ad.getModel() }}</p>
+                <p>Année du Modèle : {{ ad.getYear() }}</p>
+                </div>
+                <a class="adpage__link" href="{{ path('app_contact', {'title': ad.getTitle() }) }}">Nous Contacter</a>
+            </article>
+            {% endfor %}
+    </div>
+{% endblock %}

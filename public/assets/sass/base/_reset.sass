@@ -3,5 +3,30 @@
 *, *:before, *:after
     box-sizing: border-box
 
-ol, ul
+ol, ul, li
     list-style: none
+
+ol, ul, li, a
+    text-decoration: none
+    color: utils.$secondary
+
+body
+    background-color: utils.$background
+    margin: 0
+
+input::placeholder
+    @extend %paragraphe2
+    padding-left: 0.8rem
+
+.alert
+    color: utils.$primary
+    @extend %infos
+
+.alert2
+    color: green
+    @extend %infos
+
+.registered
+    @include utils.flex($justify: center, $align: center)
+    width: 100%
+    @extend %paragraphe3

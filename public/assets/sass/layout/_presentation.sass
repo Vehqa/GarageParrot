@@ -1,0 +1,54 @@
+@use "../utils/_main" as utils
+@use "../utils/_function" as functions
+
+.presentation
+    width: 100%
+    @include utils.flex($direction: row, $align: center, $justify: space-between)
+    gap: 1rem
+    padding: 2rem
+    &__img
+        width: 50%
+        filter: drop-shadow(0 0.2rem 0.25rem rgba(157, 31, 31, 0.6))
+        opacity: 0.8
+    &__p
+        @extend %paragraphe3
+        font-size: 1.1rem
+        color: utils.$grey
+
+@media only screen and (max-width: 1000px)
+    .presentation__p
+        font-size: 0.8rem
+
+
+@media only screen and (max-width: 700px)
+    .presentation__p
+        font-size: 0.7rem
+
+@media only screen and (max-width: 500px)
+    .presentation__p
+        display: none
+    .presentation__img
+        width: 100%
+
+.presentation2
+    width: 100%
+    @include utils.flex($direction: row, $align: center, $justify: space-between)
+    gap: 1rem
+    padding-left: 2rem
+    margin-bottom: 4rem
+    &__p2
+        @extend %paragraphe3
+        font-size: 1.1rem
+        color: utils.$grey
+        padding: 3rem
+    &__img2
+        width: 50%
+        opacity: 1
+
+@media only screen and (max-width: 900px)
+    .presentation2__p2
+        padding: 0
+
+@media only screen and (max-width: 700px)
+    .presentation2__img2
+        display: none

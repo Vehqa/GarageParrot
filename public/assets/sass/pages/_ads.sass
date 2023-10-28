@@ -1,0 +1,53 @@
+@use "../utils/_main" as utils
+@use "../utils/_function" as functions
+
+.main__title
+    width: 100%
+    @include utils.flex($direction: row, $align: center, $justify: center)
+    @extend %title
+    text-decoration: underline
+    margin-top: 5rem
+    margin-left: 1rem
+    margin-bottom: 3rem
+.adpage
+    @include utils.flex($direction: row, $justify: space-around)
+    max-width: 100vw
+    flex-wrap: wrap
+    gap: 2rem
+    margin-bottom: 3rem
+    &__list
+        @include utils.flex($direction: column, $align: center, $justify: center)
+        flex-wrap: wrap
+        border-radius: 10px
+        background-color: rgba(61, 59, 59, 0.3)
+        margin-top: 3rem
+    &__img
+        width: 350px
+        height: 200px
+        border-radius: 8px 8px
+    &__title
+        @extend %title
+    &__info
+        display: flex
+        width: 100%
+        justify-content: space-around
+        @extend %paragraphe4
+    &__info2
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        padding-left: 1rem
+        width: 100%
+        @extend %paragraphe4
+
+.adpage__link
+    font-size: 1.3rem
+    margin-bottom: 1rem
+    &:hover
+        color: utils.$primary
+        text-decoration: underline
+        text-underline-offset: 4px 
+        text-decoration-thickness: 1.5px
+
+.div__title
+    padding-top: 50px

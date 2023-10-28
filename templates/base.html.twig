@@ -3,6 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}{% endblock %}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <meta name="description" content="V.Parrot est un garage automobile situé a toulouse, proposant des services de qualités : vidanges, réparations, entretiens, peinture et des occasions a la vente.">
+        <meta name="keywords" content="Garage Parrot, Garage V.Parrot, Parrot Garage, Garage automobile, Garage à toulouse, Parrot toulouse, Parrot Automobile">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa&family=Orbitron:wght@500;600;800&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
         <link rel="shortcut icon" href="../../assets/images/cleicone.png" type="image/x-icon">
         {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
@@ -10,9 +15,12 @@
 
         {% block javascripts %}
         <script src="{{ asset('assets/javascript/nav.js') }}"></script>
+        <script src="{{ asset('assets/javascript/carousel.js') }}"></script>
         {% endblock %}
     </head>
     <body>
+        {% include 'header.html.twig' %}
         {% block body %}{% endblock %}
+        {% include 'footer.html.twig' %}
     </body>
 </html>

@@ -1,0 +1,65 @@
+@use "../utils/_main" as utils
+@use "../utils/_function" as functions
+
+.home
+    height: 100vh - 15vh
+    @include utils.flex($direction: row, $align: end, $justify: center)
+    padding-bottom: 4rem
+    &::before
+        content: ""
+        background-image: url('../../assets/images/Background.jpg')
+        background-size: 100%
+        background-repeat: no-repeat
+        background-position: center
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        z-index: -1
+        opacity: 0.25
+    &__presentation
+        width: 50%
+        padding-left: 4rem
+    &__partner
+        width: 50%
+        @include utils.flex($direction: column, $align: end, $justify: center)
+        padding-right: 4rem
+    &__title
+        @extend %title3
+        span
+            color: utils.$primary
+    &__text
+        @extend %paragrapheGrey
+    &__img
+        max-height: 4rem
+        max-width: 6rem
+        margin-left: 1.5rem
+
+@media only screen and (max-width: 950px)
+    .home__title
+        font-size: 1.3rem
+    .home__off
+        display: none
+
+@media only screen and (max-width: 650px)
+    .home
+        @include utils.flex($direction: column, $align: center, $justify: end)
+        width: 100%
+    .home__presentation
+        @include utils.flex($direction: column, $align: center, $justify: center)
+        width: 100%
+        padding-bottom: 3rem
+    .home__partner
+        @include utils.flex($direction: row, $align: center, $justify: center)
+        margin-top: 4rem
+    .home__images
+        @include utils.flex($direction: row, $align: center, $justify: center)
+
+@media only screen and (max-width: 550px)
+    .home__presentation
+        display: none
+    .home__partner
+        @include utils.flex($direction: column, $align: center, $justify: center)
+    .home__images
+        @include utils.flex($direction: row, $align: center, $justify: center)
