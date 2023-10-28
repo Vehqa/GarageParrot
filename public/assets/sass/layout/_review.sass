@@ -1,0 +1,28 @@
+@use "../utils/_main" as utils
+@use "../utils/_function" as functions
+
+.wrapper 
+    @include utils.flex($direction: row, $align: center, $justify: center)
+    height: 300px
+
+.carousel 
+    list-style-type: none
+    padding: 0
+    margin: 0
+    @include utils.flex($direction: column, $align: center)
+
+.card 
+    /* Styles pour chaque élément de la liste */
+    /* Assurez-vous que la largeur des éléments est correctement définie pour le carousel */
+    width: 300px
+    display: none
+
+.name
+    @extend %title
+
+.testimonial
+    width: 100%
+    margin-top: 1.5rem
+    @include utils.flex($direction: column, $align: center, $justify: center)
+    &__p
+        @extend %paragrapheGrey

@@ -1,0 +1,27 @@
+@use "../utils/_main" as utils
+@use "../utils/_function" as functions
+
+.error404
+    background-image: url(https://kawsar.design/wp-content/uploads/2023/02/BG-Tx-1.svg)
+    width: 100vw
+    height: 100vh
+    @include utils.flex($direction: column, $align: center, $justify: center)
+    &__title
+        text-align: center
+        @extend %title
+        font-size: 3rem
+    &__p
+        font-size: 1.2rem
+        text-align: center
+    &__link
+        font-size: 1.7rem
+
+@media only screen and (max-width: 650px)
+    .error404__title
+        font-size: 2rem
+
+    .error404__p
+        font-size: 1rem
+
+    .error404__link
+        font-size: 1.3rem

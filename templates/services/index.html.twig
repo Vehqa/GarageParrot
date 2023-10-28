@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}V.Parrot Services{% endblock %}
+
+{% block body %}
+    <h1 class="title">Nos Services</h1>
+    <div class="services">
+        {% for service in services %}
+        {% set priceFormatted = (service.getPrice() / 100)|number_format(2, ',', ' ') %}
+            <div class="services__cards">
+                <img class="services__img" src={{ service.getImages() }} alt="Image du services">
+                <div class="services__text">
+                    <h3 class="services__title">{{ service.getTitle() }}<h3>
+                    <p class="services__para">{{ service.getDescription() }}</p>
+                    <hr class="separation">
+                    <p class="services__para2">Le prix indiqué si dessous est fourni à titre indicatif, le prix peut varier à la hausse ou à la baisse selon votre véhicule et son entretien.</p>
+                    <p class="services__price">Prix : {{ priceFormatted }} €</p>
+                    <a class="services__link" href="/contact">Nous Contacter</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

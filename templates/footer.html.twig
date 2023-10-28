@@ -1,0 +1,46 @@
+{% set footerData = footerData() %}
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__categories">
+        <div class="footer__garage">
+            <div class="footer__logo">
+                <h1>V.Parrot</h1>
+                <p class="footer__logop">Garage Automobile</p>
+            </div>
+            <p class="footer__text">Tel : 06 54 67 89 65</p>
+            <p class="footer__text">Adresse : Toulouse 31200</p>
+            <p class="footer__text">V.Parrot@gmail.com</p>
+        </div> 
+        <div class="footer__info">
+            <p class="footer__title">Infos Utiles :</p>
+            <div class="footer__infoLink">
+                <a class="footer__text footer__link" href="/">Accueil</a>
+                <a class="footer__text footer__link" href="https://goo.gl/maps/h6nH3d2LyzczdU1i8" target="_blank">Google Maps</a>
+                <a class="footer__text footer__link" href="/contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer__hour">
+            <p class="footer__title">Horaire d'ouverture :</p>
+            <ul class="footer__hourUl">
+                {% for hour in hours %}
+                <li class="footer__text"><span class="footer__date">Lundi:</span> {{ hour.getMonday() }}</li>
+                <li class="footer__text"><span class="footer__date">Mardi:</span> {{ hour.getTuesday() }}</li>
+                <li class="footer__text"><span class="footer__date">Mercredi:</span> {{ hour.getWednesday() }}</li>
+                <li class="footer__text"><span class="footer__date">Jeudi:</span> {{ hour.getThursday() }}</li>
+                <li class="footer__text"><span class="footer__date">Vendredi:</span> {{ hour.getFriday() }}</li>
+                <li class="footer__text"><span class="footer__date">Samedi:</span> {{ hour.getSaturday() }}</li>
+                <li class="footer__text"><span class="footer__date">Dimanche:</span> {{ hour.getSunday() }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="footer__follow">
+            <p class="footer__title">Suivez Nous :</p>
+            <div class="footer__followLink">
+                <a class="footer__text footer__link" href="https://www.instagram.com" target="_blank">Instagram</a>
+                <a class="footer__text footer__link" href="https://www.facebook.com" target="_blank">Facebook</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<p class="registered">Made by Vehqa ®| Arthur Nectoux || ECF 2023</p>
+<!-- AUTHOR : VEHQA | Arthur Nectoux -->

@@ -1,0 +1,51 @@
+@use "../utils/_main" as utils
+@use "../utils/_function" as functions
+
+.contact
+    background-image: url('../../assets/images/Background.jpg')
+    opacity: 0.15
+    background-repeat: no-repeat
+    background-size: 100%
+    width: 80%
+    height: 80vh
+    margin: 0 auto
+    display: block
+    position: relative
+    @include utils.flex($direction: row, $align: center, $justify: center)
+    &__form
+        @include utils.flex($direction: column, $align: center, $justify: center)
+        width: 100%
+        gap: 2rem
+        top: 25%
+        position: absolute
+    &__title
+        @extend %title
+        text-transform: uppercase
+        text-align: center
+    &__input
+        background-color: transparent
+        @extend %paragraphe2
+        font-weight: 700
+        border: none
+        border-bottom: 1px solid utils.$secondary
+        height: 2.7rem
+        width: 17rem
+    &__label
+        @extend %paragraphe2
+        font-weight: 700
+        text-decoration: underline
+    &__textarea
+        background-color: transparent
+        @extend %paragraphe2
+        font-weight: 700
+        width: 35rem
+        height: 10rem
+        resize: none
+
+@media only screen and (max-width: 850px)
+    .contact
+        height: 100vh
+
+@media only screen and (max-width: 650px)
+    .contact__textarea
+        width: 20rem

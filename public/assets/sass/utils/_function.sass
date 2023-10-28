@@ -1,0 +1,4 @@
+@function pixelToRem($value)
+    $remValue: calc(($value * 1) / 16) 
+    $remValueCeil: ceil($remValue)  
+    @return #{$remValueCeil}rem
